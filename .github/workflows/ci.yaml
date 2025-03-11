@@ -19,3 +19,18 @@ jobs:
       - run: depot pull-token >/dev/null
       # - uses: depot/build-push-action@v1
       # - run: depot build .
+  oidc-2:
+    needs: [oidc]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        instance: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: depot/setup-action@v1
+      - run: depot pull-token >/dev/null
+      # - uses: depot/build-push-action@v1
+      # - run: depot build .

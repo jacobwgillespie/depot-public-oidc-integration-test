@@ -13,5 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: depot/setup-action@v1
-      - uses: depot/build-push-action@v1
-      - run: depot build .
+      - run: depot pull-token >/dev/null
+      # - uses: depot/build-push-action@v1
+      # - run: depot build .

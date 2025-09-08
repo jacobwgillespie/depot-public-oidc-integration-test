@@ -12,3 +12,4 @@ jobs:
       id-token: write
     steps:
       - run: env
+      - run: cat $GITHUB_EVENT_PATH | jq .
